@@ -13,6 +13,9 @@ import io.awspring.cloud.sqs.operations.SqsTemplate;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+
+@ConditionalOnProperty(prefix = "messaging.sqs", name = "enabled", havingValue ="true")
 @Slf4j
 @Service
 @RequiredArgsConstructor
